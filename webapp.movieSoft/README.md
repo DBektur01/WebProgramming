@@ -1,4 +1,4 @@
-# movieSoft_app
+# web programming
 ## Link to web-app: https://moviesoft.herokuapp.com/home
 ## Screenshots:
 In this web application, you can add films yourself<br>
