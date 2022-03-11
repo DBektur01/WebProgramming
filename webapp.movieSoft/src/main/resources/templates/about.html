@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <title>About</title>
+    </head>
+        <body>
+            <header th:insert="fragment/navbar::navbar"></header>
+            <div class="container mt-5 shadow shadow-sm">
+                <div class="col-lg-8 p-lg-4">
+                    <h1 class="display-4 font-italic" th:text="${users}"></h1>
+                    <p class="lead my-3">The best app for watching films - MovieSoft. It hosts a large number of movies which I recommend you watch. The app is specially designed and organized to watch free movies. There are no subscriptions or Sign-Ups needed to use this App. You can get the Movies HD for free. The App has a very decent interface but the number of movies it has to offer will surely bring a smile to your face.</p>
+                </div>
+            </div>
+        </body>
+    <footer th:insert="fragment/footer::footer"></footer>
+</html>

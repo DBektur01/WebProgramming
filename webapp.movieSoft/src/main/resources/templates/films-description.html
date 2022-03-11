@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <title>Films</title>
+    </head>
+    <body>
+        <header th:insert="fragment/navbar::navbar"></header>
+        <div class="container mt-5">
+            <h1 class="display-4 font-italic">Description</h1>
+            <div th:each="item:${user}" class="col-lg-6 p-lg-4 alert alert-success rounded-circle mt-2">
+                <h3 th:text="${item.name}"></h3>
+                <p class="lead my-3" th:text="${item.description}"></p>
+                <a th:href="${item.url}" class="btn btn-outline-success">Watch</a>
+            </div>
+        </div>
+        <footer th:insert="fragment/footer::footer"></footer>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <title>Films</title>
+    </head>
+    <body>
+        <header th:insert="fragment/navbar::navbar"></header>
+        <div class="container mt-5 col-lg-4">
+            <h1 class="display-4 font-italic">Edit film</h1>
+            <div th:each="item:${user}">
+                <form method="post">
+                    <label>
+                        <input type="text" th:value="${item.name}" name="name" placeholder="name of film" class="form-control mt-3">
+                    </label>
+                    <label>
+                        <input type="text" th:value="${item.genre}" name="genre" placeholder="name of genre" class="form-control">
+                    </label>
+                    <label>
+                        <input type="text" th:value="${item.releaseDate}" name="releaseDate" placeholder="release date" class="form-control my-3">
+                    </label>
+                    <label>
+                        <input type="url" th:value="${item.url}" name="url" placeholder="film url" class="form-control">
+                    </label>
+                    <labe>
+                        <textarea type="text" name="description" placeholder="description" class="form-control mb-3" th:text="${item.description}"></textarea>
+                    </labe>
+                    <button type="submit" class="btn btn-outline-success">Update</button>
+                </form>
+            </div>
+        </div>
+        <footer th:insert="fragment/footer::footer"></footer>
+    </body>
+</html>

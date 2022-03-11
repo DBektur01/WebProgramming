@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>List of films</title>
+</head>
+    <body>
+        <header th:insert="fragment/navbar::navbar"></header>
+        <div class="container mt-5">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#id</th>
+                        <th>Name</th>
+                        <th>Genre</th>
+                        <th>Release date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="item:${users}">
+                        <td th:text="${item.id}"></td>
+                        <td th:text="${item.name}"></td>
+                        <td th:text="${item.genre}"></td>
+                        <td th:text="${item.releaseDate}"></td>
+                        <td>
+                            <div class="d-flex">
+                                <a th:href="'/films/' + ${item.id}" class="btn btn-outline-success">More info</a>
+                                <a th:href="'/films/' + ${item.id} + '/edit'" class="btn btn-outline-info ml-1">Edit</a>
+                                <form th:action="'/films/' + ${item.id} + '/delete'" method="post">
+                                    <button type="submit" class="btn btn-outline-danger ml-1">Delete</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

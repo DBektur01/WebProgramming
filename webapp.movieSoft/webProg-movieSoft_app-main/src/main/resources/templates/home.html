@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title th:text="${users}"></title>
+</head>
+<body>
+<header th:insert="fragment/navbar::navbar"></header>
+<div class="container py-lg-3 mt-lg-5 d-flex shadow shadow-sm">
+    <div class="col-lg-6 p-lg-4">
+        <h1 class="display-4 font-italic">Info headline</h1>
+        <p class="lead my-3">Most films watching apps require an account, but if you're tired of signing up for services, MovieSoft is the free film watching app for you. Here you can add any films you want and watch...</p>
+        <a class="btn btn-outline-warning" th:href="@{about}">Read more</a>
+    </div>
+    <div class="col-lg-6 float-lg-right">
+        <img src="https://www.brandcrowd.com/gallery/brands/pictures/picture13793791508496.png" alt="film">
+    </div>
+</div>
+<footer th:insert="fragment/footer::footer"></footer>
+</body>
+</html>
